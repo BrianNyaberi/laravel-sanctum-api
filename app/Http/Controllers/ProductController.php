@@ -65,13 +65,13 @@ class ProductController extends Controller
     }
 
     /**
-     * Search using name param, 
+     * Search record using name param, 
      *
      * @param  str $name
      * @return \Illuminate\Http\Response
      */
     public function search($name)
     {
-        return Product::where($name, 'like', '%'.$name.'%')->get();
+        return Product::where('name', 'like', '%'.$name.'%')->get();
     }
 }
